@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Read genuine customer reviews of Lucky Sweets, Bhota's top-rated Indian sweet shop. See why we have a 4.8★ Google rating for our handmade mithai, cakes and namkeen in Hamirpur, Himachal Pradesh.">
+  <meta name="keywords" content="Lucky Sweets reviews, customer reviews Bhota sweets, Hamirpur sweet shop reviews, Lucky Sweets rating, Google reviews Lucky Sweets, best sweet shop Hamirpur, mithai reviews Himachal Pradesh">
+  <meta name="author" content="Lucky Sweets">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://datyaltech-prog.github.io/luckysweets/reviews.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Customer Reviews — Lucky Sweets, Bhota, Hamirpur">
+  <meta property="og:description" content="Lucky Sweets has a 4.8★ rating on Google. Read what our customers say about our authentic Indian sweets, fresh bakery and premium namkeen.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:url" content="https://datyaltech-prog.github.io/luckysweets/reviews.html">
+  <meta property="og:site_name" content="Lucky Sweets">
+  <meta property="og:image" content="https://datyaltech-prog.github.io/luckysweets/images/welcome-sweet-shop.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Customer Reviews — Lucky Sweets">
+  <meta name="twitter:description" content="Rated 4.8★ on Google. Read genuine customer reviews of Lucky Sweets in Bhota, Hamirpur.">
+
+  <!-- Geo -->
+  <meta name="geo.region" content="IN-HP">
+  <meta name="geo.placename" content="Bhota, Hamirpur">
+
+  <title>Customer Reviews — Lucky Sweets | 4.8★ Rated Sweet Shop, Bhota, Hamirpur</title>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
+  <link rel="apple-touch-icon" href="images/favicon/favicon.svg">
+
+  <!-- Reviews Page Specific Styles -->
+  <style>
+    /* Overall Rating Card */
+    .overall-rating-card {
+      background: linear-gradient(135deg, var(--color-cream) 0%, #fff 100%);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-3xl);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3xl);
+      box-shadow: var(--shadow-md);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .rating-big-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: var(--fw-extrabold);
+      color: var(--color-text-dark);
+      line-height: 1;
+      min-width: 140px;
+      text-align: center;
+    }
+
+    .rating-info {
+      flex: 1;
+    }
+
+    .rating-stars-large {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .rating-stars-large svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .rating-source {
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      font-weight: var(--fw-medium);
+    }
+
+    /* Rating Breakdown */
+    .rating-breakdown {
+      max-width: 700px;
+      margin: var(--space-3xl) auto 0;
+    }
+
+    .rating-breakdown h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-semibold);
+      color: var(--color-text-dark);
+      margin-bottom: var(--space-xl);
+      text-align: center;
+    }
+
+    .rating-bar-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .rating-bar-label {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--color-text-medium);
+      min-width: 70px;
+      text-align: right;
+    }
+
+    .rating-bar-track {
+      flex: 1;
+      height: 12px;
+      background: var(--color-border-light);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .rating-bar-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold-light));
+      transition: width 1s ease-out;
+    }
+
+    .rating-bar-percent {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-semibold);
+      color: var(--color-text-light);
+      min-width: 40px;
+    }
+
+    /* Leave Review CTA */
+    .leave-review-cta {
+      background: var(--color-cream);
+      border-radius: var(--radius-xl);
+      padding: var(--space-4xl);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3xl);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .qr-placeholder {
+      width: 160px;
+      height: 160px;
+      min-width: 160px;
+      background: var(--color-white);
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      color: var(--color-text-muted);
+      font-size: var(--fs-sm);
+    }
+
+    .qr-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+    }
+
+    .leave-review-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: var(--fs-2xl);
+      color: var(--color-text-dark);
+      margin-bottom: var(--space-md);
+    }
+
+    .leave-review-content p {
+      color: var(--color-text-medium);
+      margin-bottom: var(--space-xl);
+      line-height: var(--lh-relaxed);
+    }
+
+    .btn-google {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      background: var(--color-white);
+      color: var(--color-text-dark);
+      padding: 14px 32px;
+      border-radius: var(--radius-full);
+      font-weight: var(--fw-semibold);
+      font-size: var(--fs-base);
+      border: 2px solid var(--color-border);
+      transition: all var(--transition-base);
+      text-decoration: none;
+    }
+
+    .btn-google:hover {
+      border-color: var(--color-google-blue);
+      box-shadow: 0 4px 16px rgba(66, 133, 244, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .btn-google svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Star SVG inline */
+    .star-filled {
+      fill: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    .star-empty {
+      fill: none;
+      stroke: var(--color-border);
+      stroke-width: 2;
+    }
+
+    /* Responsive for review page */
+    @media (max-width: 768px) {
+      .overall-rating-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-2xl);
+        gap: var(--space-xl);
+      }
+
+      .rating-big-number {
+        font-size: 4rem;
+        min-width: auto;
+      }
+
+      .rating-stars-large {
+        justify-content: center;
+      }
+
+      .leave-review-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-2xl);
+        gap: var(--space-xl);
+      }
+
+      .qr-placeholder {
+        min-width: auto;
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .rating-bar-label {
+        min-width: 55px;
+        font-size: var(--fs-xs);
+      }
+
+      .rating-bar-percent {
+        min-width: 35px;
+        font-size: var(--fs-xs);
+      }
+    }
+  </style>
+
+  <!-- Schema.org BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://datyaltech-prog.github.io/luckysweets/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Reviews",
+        "item": "https://datyaltech-prog.github.io/luckysweets/reviews.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org AggregateRating -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Lucky Sweets",
+    "description": "Premium Indian sweet shop in Bhota, Hamirpur, Himachal Pradesh serving authentic handmade mithai since 1985.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Main Market Road, Bhota",
+      "addressLocality": "Bhota",
+      "addressRegion": "Himachal Pradesh",
+      "postalCode": "176041",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "31.68",
+      "longitude": "76.18"
+    },
+    "telephone": "+91-98765-43210",
+    "url": "https://datyaltech-prog.github.io/luckysweets/reviews.html",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "248",
+      "reviewCount": "248"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Rajesh Kumar" },
+        "datePublished": "2025-06-08",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Best sweet shop in Bhota! The Kaju Katli is absolutely amazing. We order all our festival sweets from Lucky Sweets. The quality has been consistent for years."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sunita Sharma" },
+        "datePublished": "2025-05-22",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Ordered a wedding sweet box and it was perfect. Beautiful packaging and delicious sweets. All our guests loved it. Highly recommend for bulk orders!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Ankit Verma" },
+        "datePublished": "2025-05-10",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Fresh Jalebi and Samosa are my weekend favorites. Always hot and crispy. The staff is very friendly and the shop is always clean."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Priya Thakur" },
+        "datePublished": "2025-04-28",
+        "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+        "reviewBody": "Great variety of Bengali sweets. The Rasgulla and Rasmalai are the best I have had in Himachal. Very authentic taste."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Vikram Singh" },
+        "datePublished": "2025-04-15",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "We have been buying from Lucky Sweets for over 15 years. The quality and taste has remained consistently excellent. Truly the best in Hamirpur district."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Meena Devi" },
+        "datePublished": "2025-03-30",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "The birthday cake we ordered was beautiful and delicious. Fresh cream and perfect sweetness. My daughter was so happy! Thank you Lucky Sweets."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Raju Bhatia" },
+        "datePublished": "2025-03-12",
+        "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+        "reviewBody": "Good quality namkeen and sweets. The mixture and bhujia are always fresh. Prices are reasonable for the quality you get."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Anita Kumari" },
+        "datePublished": "2025-02-25",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Diwali gift boxes from Lucky Sweets are the best. Premium packaging with assorted sweets. Everyone in my office loved them. Will order again!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Deepak Sharma" },
+        "datePublished": "2025-02-10",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "The milk cake here is legendary. Pure desi ghee taste that reminds me of homemade sweets. This is what authentic Indian mithai should taste like."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Neha Gupta" },
+        "datePublished": "2025-01-18",
+        "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+        "reviewBody": "Very hygienic shop. You can see the kitchen is clean. The staff wears gloves while handling sweets. This gives me confidence in the quality."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Amit Saini" },
+        "datePublished": "2024-12-28",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Lucky Sweets is a gem in Bhota. The Gulab Jamun melts in your mouth. Every festival, this is our go-to sweet shop. Never disappointed!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Kavita Rani" },
+        "datePublished": "2024-12-15",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Corporate order for our office party was handled perfectly. Timely delivery, excellent presentation, and the sweets were loved by everyone. Professional service!"
+      }
+    ]
+  }
+  </script>
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C62828">
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER / NAVIGATION
+       ================================================================ -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Lucky Sweets — Home">
+        Lucky <span>Sweets</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+          <li><a href="index.html#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Menu (Mobile) -->
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" aria-hidden="true"></div>
+  <div class="mobile-nav-panel" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">✕</button>
+    <ul class="nav-list">
+      <li><a href="index.html" class="nav-link mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link mobile-nav-link">About</a></li>
+      <li><a href="index.html#menu" class="nav-link mobile-nav-link">Menu</a></li>
+      <li><a href="index.html#why-us" class="nav-link mobile-nav-link">Why Us</a></li>
+      <li><a href="reviews.html" class="nav-link mobile-nav-link active">Reviews</a></li>
+      <li><a href="index.html#contact" class="nav-link mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ================================================================
+       PAGE HEADER WITH BREADCRUMB
+       ================================================================ -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Customer Reviews</h1>
+      <p>See what our valued customers have to say about their experience at Lucky Sweets — straight from our Google reviews.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">›</span>
+        <span>Reviews</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       OVERALL RATING DISPLAY
+       ================================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="overall-rating-card fade-in">
+        <div class="rating-big-number">4.8</div>
+        <div class="rating-info">
+          <div class="rating-stars-large">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="rating-source">Based on Google Reviews</div>
+        </div>
+      </div>
+
+      <!-- Rating Breakdown -->
+      <div class="rating-breakdown fade-in">
+        <h3>Rating Breakdown</h3>
+
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">5 Star</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width: 80%;"></div></div>
+          <span class="rating-bar-percent">80%</span>
+        </div>
+
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">4 Star</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width: 12%;"></div></div>
+          <span class="rating-bar-percent">12%</span>
+        </div>
+
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">3 Star</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width: 5%;"></div></div>
+          <span class="rating-bar-percent">5%</span>
+        </div>
+
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">2 Star</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width: 2%;"></div></div>
+          <span class="rating-bar-percent">2%</span>
+        </div>
+
+        <div class="rating-bar-row">
+          <span class="rating-bar-label">1 Star</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width: 1%;"></div></div>
+          <span class="rating-bar-percent">1%</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       REVIEWS GRID
+       ================================================================ -->
+  <section class="section" style="background: var(--color-cream-dark);">
+    <div class="container">
+      <h2 class="section-title fade-in">What Our Customers Say</h2>
+      <p class="section-subtitle fade-in">Genuine reviews from our happy customers who trust Lucky Sweets for every celebration.</p>
+
+      <div class="grid-2" style="margin-top: var(--space-2xl);">
+
+        <!-- Review 1: Rajesh Kumar -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Best sweet shop in Bhota! The Kaju Katli is absolutely amazing. We order all our festival sweets from Lucky Sweets. The quality has been consistent for years."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">RK</div>
+            <div>
+              <div class="reviewer-name">Rajesh Kumar</div>
+              <div class="reviewer-date">8 June 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Sunita Sharma -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Ordered a wedding sweet box and it was perfect. Beautiful packaging and delicious sweets. All our guests loved it. Highly recommend for bulk orders!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SS</div>
+            <div>
+              <div class="reviewer-name">Sunita Sharma</div>
+              <div class="reviewer-date">22 May 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Ankit Verma -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Fresh Jalebi and Samosa are my weekend favorites. Always hot and crispy. The staff is very friendly and the shop is always clean."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">AV</div>
+            <div>
+              <div class="reviewer-name">Ankit Verma</div>
+              <div class="reviewer-date">10 May 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: Priya Thakur -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Great variety of Bengali sweets. The Rasgulla and Rasmalai are the best I have had in Himachal. Very authentic taste."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">PT</div>
+            <div>
+              <div class="reviewer-name">Priya Thakur</div>
+              <div class="reviewer-date">28 April 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5: Vikram Singh -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"We have been buying from Lucky Sweets for over 15 years. The quality and taste has remained consistently excellent. Truly the best in Hamirpur district."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">VS</div>
+            <div>
+              <div class="reviewer-name">Vikram Singh</div>
+              <div class="reviewer-date">15 April 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 6: Meena Devi -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"The birthday cake we ordered was beautiful and delicious. Fresh cream and perfect sweetness. My daughter was so happy! Thank you Lucky Sweets."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">MD</div>
+            <div>
+              <div class="reviewer-name">Meena Devi</div>
+              <div class="reviewer-date">30 March 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 7: Raju Bhatia -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Good quality namkeen and sweets. The mixture and bhujia are always fresh. Prices are reasonable for the quality you get."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">RB</div>
+            <div>
+              <div class="reviewer-name">Raju Bhatia</div>
+              <div class="reviewer-date">12 March 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 8: Anita Kumari -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Diwali gift boxes from Lucky Sweets are the best. Premium packaging with assorted sweets. Everyone in my office loved them. Will order again!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">AK</div>
+            <div>
+              <div class="reviewer-name">Anita Kumari</div>
+              <div class="reviewer-date">25 February 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 9: Deepak Sharma -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"The milk cake here is legendary. Pure desi ghee taste that reminds me of homemade sweets. This is what authentic Indian mithai should taste like."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">DS</div>
+            <div>
+              <div class="reviewer-name">Deepak Sharma</div>
+              <div class="reviewer-date">10 February 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 10: Neha Gupta -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-empty"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Very hygienic shop. You can see the kitchen is clean. The staff wears gloves while handling sweets. This gives me confidence in the quality."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">NG</div>
+            <div>
+              <div class="reviewer-name">Neha Gupta</div>
+              <div class="reviewer-date">18 January 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 11: Amit Saini -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Lucky Sweets is a gem in Bhota. The Gulab Jamun melts in your mouth. Every festival, this is our go-to sweet shop. Never disappointed!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">AS</div>
+            <div>
+              <div class="reviewer-name">Amit Saini</div>
+              <div class="reviewer-date">28 December 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 12: Kavita Rani -->
+        <div class="review-card fade-in">
+          <div class="stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="star-filled"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">"Corporate order for our office party was handled perfectly. Timely delivery, excellent presentation, and the sweets were loved by everyone. Professional service!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">KR</div>
+            <div>
+              <div class="reviewer-name">Kavita Rani</div>
+              <div class="reviewer-date">15 December 2024</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       LEAVE A REVIEW CTA
+       ================================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="leave-review-cta fade-in">
+        <div class="qr-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="3" height="3"/>
+            <rect x="18" y="14" width="3" height="3"/>
+            <rect x="14" y="18" width="3" height="3"/>
+            <rect x="18" y="18" width="3" height="3"/>
+          </svg>
+          <span>QR Code</span>
+        </div>
+        <div class="leave-review-content">
+          <h3>Share Your Experience</h3>
+          <p>Had a sweet experience at Lucky Sweets? We would love to hear from you! Your review helps other customers discover us and helps us serve you better. Scan the QR code or click the button below to leave a review on Google.</p>
+          <a href="#" class="btn-google" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Leave a Review on Google
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FINAL CTA SECTION
+       ================================================================ -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="fade-in">Sweeten Your Next Celebration</h2>
+      <p class="fade-in">From daily treats to grand wedding feasts — Lucky Sweets is ready to make every moment sweeter. Place your order today!</p>
+      <div class="cta-buttons fade-in">
+        <a href="tel:+919876543210" class="btn btn-gold btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call: +91 98765 43210
+        </a>
+        <a href="https://wa.me/919876543210?text=Hello!%20I%20would%20like%20to%20place%20an%20order%20for%20sweets." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: About -->
+        <div>
+          <div class="footer-logo">Lucky <span>Sweets</span></div>
+          <p>The most trusted name for authentic Indian sweets in Bhota, Hamirpur. Serving purity and taste since 1985 with love, tradition and the finest ingredients from Himachal Pradesh.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/luckysweetsbhota" target="_blank" rel="noopener noreferrer" aria-label="Like us on Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/luckysweetsbhota" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@luckysweetsbhota" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#menu">Our Menu</a></li>
+            <li><a href="reviews.html">Customer Reviews</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Popular Sweets -->
+        <div>
+          <h4>Popular Sweets</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#menu">Gulab Jamun</a></li>
+            <li><a href="index.html#menu">Kaju Katli</a></li>
+            <li><a href="index.html#menu">Rasgulla</a></li>
+            <li><a href="index.html#menu">Besan Laddu</a></li>
+            <li><a href="index.html#menu">Rasmalai</a></li>
+            <li><a href="index.html#menu">Soan Papdi</a></li>
+            <li><a href="index.html#menu">Jalebi</a></li>
+            <li><a href="index.html#menu">Peda</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Hours -->
+        <div>
+          <h4>Contact &amp; Hours</h4>
+          <ul class="footer-hours">
+            <li>
+              <span>Monday – Saturday</span>
+              <span>8:00 AM – 9:00 PM</span>
+            </li>
+            <li>
+              <span>Sunday</span>
+              <span>9:00 AM – 8:00 PM</span>
+            </li>
+          </ul>
+          <p style="margin-top: 20px; margin-bottom: 4px;">Main Market Road, Bhota</p>
+          <p>Hamirpur, Himachal Pradesh — 176041</p>
+          <p><a href="tel:+919876543210" style="color: var(--color-gold); font-weight: 500;">+91 98765 43210</a></p>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2024</span> <a href="index.html">Lucky Sweets</a>, Bhota, Hamirpur, Himachal Pradesh 176041. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       FLOATING ACTION BUTTONS
+       ================================================================ -->
+  <div class="floating-buttons" aria-label="Quick actions">
+    <a href="#" class="float-btn float-btn-top" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </a>
+    <a href="https://www.google.com/maps/dir//Bhota,+Hamirpur,+Himachal+Pradesh+176041" class="float-btn float-btn-directions directions-btn" target="_blank" rel="noopener noreferrer" aria-label="Get directions to Lucky Sweets">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+    </a>
+    <a href="tel:+919876543210" class="float-btn float-btn-call" aria-label="Call Lucky Sweets">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+    <a href="https://wa.me/919876543210?text=Hello!%20I%20would%20like%20to%20enquire%20about%20your%20sweets." class="float-btn float-btn-whatsapp whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" data-message="Hello! I would like to enquire about your sweets.">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="js/script.js"></script>
+
+  <!-- Dynamic Copyright Year -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
